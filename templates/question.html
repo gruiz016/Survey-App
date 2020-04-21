@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block title %}{{title}}{% endblock %} {% block
+content %}
+<form action="/answer" method="POST">
+  <p>{{question[num].question}}</p>
+  <div class="inputs">
+    <label for="yes">{{question[num].choices[0]}}</label>
+    <input
+      type="radio"
+      id="yes"
+      name="answer"
+      value="{{question[num].choices[0]}}"
+    />
+    <label for="no">{{question[num].choices[1]}}</label>
+    <input
+      type="radio"
+      id="no"
+      name="answer"
+      value="{{question[num].choices[1]}}"
+    />
+  </div>
+  <button class="btn btn-block">Next</button>
+</form>
+{% endblock %}
